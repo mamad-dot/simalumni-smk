@@ -1,0 +1,9 @@
+# Abaikan file konfigurasi IDE dan editor
+.idea/
+.vscode/
+*.swp
+*~
+
+# Abaikan file sistem operasi
+.DS_Store
+Thumbs.db
