@@ -22,7 +22,7 @@ function get_page_title($folder, $page) {
     }
     if ($folder == 'status') return 'Status Alumni';
     if ($folder == 'laporan') return 'Laporan';
-    if ($folder == 'pengaturan') return 'Pengaturan'; // Ditambahkan
+    if ($folder == 'pengaturan') return 'Pengaturan';
     return 'SIMALUMNI';
 }
 $page_title = get_page_title($current_folder, $current_page);
@@ -37,14 +37,28 @@ $page_title = get_page_title($current_folder, $current_page);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
+    <style>
+    .navbar-brand-logo {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    </style>
 </head>
 
 <body>
 
     <header class="navbar navbar-dark sticky-top bg-primary flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="<?= base_url('dashboard/index.php') ?>">
-            <div class="fw-bold"><i class="bi bi-mortarboard-fill"></i> SIMALUMNI SMK</div>
-            <small style="font-size: 0.7em;">Sistem Informasi Manajemen Alumni</small>
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 d-flex align-items-center"
+            href="<?= base_url('dashboard/index.php') ?>">
+            <img src="<?= base_url('assets/img/WhatsApp Image 2026-01-13 at 08.02.56.jpeg') ?>" alt="Logo"
+                class="navbar-brand-logo">
+            <div>
+                <div class="fw-bold">SIMALUMNI SMK</div>
+                <small style="font-size: 0.7em;">Sistem Informasi Alumni</small>
+            </div>
         </a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
@@ -97,7 +111,6 @@ $page_title = get_page_title($current_folder, $current_page);
                             </a>
                         </li>
                         <li class="nav-item">
-                            <!-- Link diubah dan diberi kondisi active -->
                             <a class="nav-link <?= ($current_folder == 'pengaturan') ? 'active' : '' ?>"
                                 href="<?= base_url('pengaturan/index.php') ?>">
                                 <i class="bi bi-gear"></i> Pengaturan
